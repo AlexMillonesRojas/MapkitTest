@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainID" id="BYZ-38-t0r" customClass="ViewController" customModule="MapKitTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTv-bv-KuW">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-Ym-280">
+                                <rect key="frame" x="414" y="717" width="197" height="32"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="cambiarVistaMapa:" destination="BYZ-38-t0r" eventType="valueChanged" id="5B0-xZ-dOu"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" id="qBq-eJ-mIG" userLabel="ViewPopUp">
+                                <rect key="frame" x="-289" y="58" width="240" height="469"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lasarte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIg-ni-mR0" userLabel="Nombre del lugar">
+                                        <rect key="frame" x="16" y="9" width="99" height="32"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Captura de pantalla 2020-08-21 a las 19.36.20" translatesAutoresizingMaskIntoConstraints="NO" id="6ur-n1-559" userLabel="Foto del lugar">
+                                        <rect key="frame" x="30" y="49" width="180" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="8GE-Xn-W7b"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AJ-No-zau">
+                                        <rect key="frame" x="194" y="15" width="30" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Gw5-Rb-Pl9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closePopUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bpd-JB-dvG"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7tC-29-AAA">
+                                        <rect key="frame" x="8" y="185" width="231" height="239.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FR-mg-Syj" userLabel="-Horario">
+                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerrado permanentemente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy4-JC-Ydf" userLabel="Horario">
+                                                <rect key="frame" x="0.0" y="23.5" width="231" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-OL-8YS" userLabel="-Direccion">
+                                                <rect key="frame" x="0.0" y="49.5" width="72.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calle de Mallorca, 259" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-ZR-mN6" userLabel="Calle">
+                                                <rect key="frame" x="0.0" y="73" width="190" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08008 Barcelona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYm-43-EvN" userLabel="Codigo postal">
+                                                <rect key="frame" x="0.0" y="99" width="132.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="España" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6n-mq-R7C" userLabel="Pais">
+                                                <rect key="frame" x="0.0" y="122.5" width="56" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYY-vV-JvN" userLabel="-Telefono">
+                                                <rect key="frame" x="0.0" y="146" width="65.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+34 934 453 242" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOk-Up-v5T" userLabel="Numero de telefono">
+                                                <rect key="frame" x="0.0" y="169.5" width="152.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sitio web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gK-4n-aR4" userLabel="-Sitio web">
+                                                <rect key="frame" x="0.0" y="195.5" width="70" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="restaurantlasarte.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFC-UF-wtO" userLabel="Pagina web">
+                                                <rect key="frame" x="0.0" y="219" width="168" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="7tC-29-AAA" firstAttribute="leading" secondItem="qBq-eJ-mIG" secondAttribute="leadingMargin" id="4JN-pn-YEn"/>
+                                    <constraint firstItem="6ur-n1-559" firstAttribute="centerX" secondItem="qBq-eJ-mIG" secondAttribute="centerX" id="8v6-qf-Kqw"/>
+                                    <constraint firstItem="aIg-ni-mR0" firstAttribute="top" secondItem="MZz-Sl-J5R" secondAttribute="top" constant="9" id="9n8-KW-3OY"/>
+                                    <constraint firstItem="aIg-ni-mR0" firstAttribute="centerY" secondItem="7AJ-No-zau" secondAttribute="centerY" id="AhM-z1-xrl"/>
+                                    <constraint firstItem="7AJ-No-zau" firstAttribute="top" secondItem="MZz-Sl-J5R" secondAttribute="top" constant="15" id="Jsa-mp-P5f"/>
+                                    <constraint firstItem="7tC-29-AAA" firstAttribute="top" secondItem="6ur-n1-559" secondAttribute="bottom" constant="8" id="KqE-hi-hsk"/>
+                                    <constraint firstItem="6ur-n1-559" firstAttribute="leading" secondItem="MZz-Sl-J5R" secondAttribute="leading" constant="30" id="ZaM-Ge-ncK"/>
+                                    <constraint firstItem="7AJ-No-zau" firstAttribute="leading" secondItem="aIg-ni-mR0" secondAttribute="trailing" constant="79" id="hD3-uO-GkR"/>
+                                    <constraint firstItem="aIg-ni-mR0" firstAttribute="leading" secondItem="MZz-Sl-J5R" secondAttribute="leading" constant="16" id="hWd-S9-1lc"/>
+                                    <constraint firstItem="6ur-n1-559" firstAttribute="top" secondItem="aIg-ni-mR0" secondAttribute="bottom" constant="8" id="jLT-fe-27G"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="MZz-Sl-J5R"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FTv-bv-KuW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Me5-MF-RDa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jnO-Ym-280" secondAttribute="trailing" constant="413" id="P7X-Te-CpW"/>
+                            <constraint firstItem="FTv-bv-KuW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SCB-b2-ty8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jnO-Ym-280" secondAttribute="bottom" constant="20" id="V7w-mp-bhH"/>
+                            <constraint firstItem="FTv-bv-KuW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bf2-jX-mW9"/>
+                            <constraint firstItem="jnO-Ym-280" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="717" id="cXO-Un-07b"/>
+                            <constraint firstItem="jnO-Ym-280" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="414" id="j35-WY-Tp3"/>
+                            <constraint firstItem="FTv-bv-KuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yGo-E0-MH0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="mapView" destination="FTv-bv-KuW" id="tpt-1H-KQA"/>
+                        <outlet property="popUp" destination="qBq-eJ-mIG" id="f1M-uP-yx1"/>
+                        <outlet property="selector" destination="jnO-Ym-280" id="oaB-3P-Y5c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.28125" y="108.59375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Captura de pantalla 2020-08-21 a las 19.36.20" width="794" height="568"/>
+    </resources>
+</document>
