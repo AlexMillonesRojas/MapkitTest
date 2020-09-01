@@ -20,12 +20,67 @@ class customPin: NSObject, MKAnnotation {
         self.coordinate = location
     }
 }
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
+    
+    @IBAction func searchButtom(_ sender: Any) {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.style = UIActivityIndicatorView.Style.medium
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        
+        self.view.addSubview(activityIndicator)
+        
+        searchBar.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+        
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = searchBar.text
+        
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        
+        activeSearch.start { (response,error) in
+            
+            activityIndicator.stopAnimating()
+            UIApplication.shared.endReceivingRemoteControlEvents()
+            
+            if response == nil
+            {
+                print("ERROR")
+            }
+            else
+            {
+                let annotations = self.mapView.annotations
+                self.mapView.removeAnnotations(annotations)
+                
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                let annotation = MKPointAnnotation()
+                annotation.title = searchBar.text
+                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                self.mapView.addAnnotation(annotation)
+                
+                let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
+                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                let region = MKCoordinateRegion(center: coordinate, span: span)
+                self.mapView.setRegion(region, animated: true)
+            }
+            
+        }
+    }
     let miLocalizacion = CLLocation(latitude:41.3717904, longitude:2.1155786)
 
     let distanceSpan: CLLocationDistance = 10000
     func zoomLevel(location: CLLocation) {
-        print(distanceSpan)
         let mapCoordinates = MKCoordinateRegion(center: location.coordinate,latitudinalMeters: distanceSpan,longitudinalMeters: distanceSpan)
                     mapView.setRegion(mapCoordinates, animated: true)
     }
@@ -44,7 +99,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         animacionFinal()
     }
     private func bordes() {
-        popUp.layer.cornerRadius = 18
+        popUp.layer.cornerRadius = 10
         //pop.layer.masksToBounds = true
     }
     private func sombras(scale: Bool = true) {
@@ -87,16 +142,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
         rightButtom.tag = annotation.hash
         
         annotationView.image = UIImage(named: "pin")
-        annotationView.canShowCallout = false
+        annotationView.canShowCallout = true
         annotationView.rightCalloutAccessoryView = rightButtom
         
         return annotationView
         
     }
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-       mapView.deselectAnnotation(view.annotation, animated: true)
-        self.view.addSubview(popUp)
-    }
+//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//       mapView.deselectAnnotation(view.annotation, animated: true)
+//        self.view.addSubview(popUp)
+//    }
     @IBAction func cambiarVistaMapa(_ sender: Any) {
         switch selector.selectedSegmentIndex {
         case 0:
@@ -113,12 +168,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         bordes()
         sombras()
-        animacionInicial()
-        
+        //animacionInicial()
+        //locationManager.requestLocation()
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
+        
         mapView.showsUserLocation = true
 
         zoomLevel(location: miLocalizacion)

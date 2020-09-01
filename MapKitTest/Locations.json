@@ -1,0 +1,22 @@
+{"locations":
+ [
+  {
+    "title": "Restaurante Lasarte",
+    "subtitle": "Restaurante 1"
+    "latitude": "41.393639",
+    "longitude": "2.162126"
+  },
+  {
+    "title": "La Tartareria Raw Food",
+    "subtitle": "Restaurante 2"
+    "latitude": "41.384888",
+    "longitude": "2.162039"
+  },
+  {
+    "title": "Jobs Restaurant BCN",
+    "subtitle": "Restaurante 3"
+    "latitude": "41.388524",
+    "longitude": "2.155976"
+  }
+ ]
+}

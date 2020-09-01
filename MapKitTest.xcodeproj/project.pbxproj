@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		407C3F9724FE75B000036815 /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = 407C3F9624FE75B000036815 /* Login.json */; };
+		407C3F9924FE989A00036815 /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 407C3F9824FE989A00036815 /* Locations.json */; };
 		407FD9D924E706A1004C53B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD9D824E706A1004C53B4 /* AppDelegate.swift */; };
 		407FD9DB24E706A1004C53B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD9DA24E706A1004C53B4 /* SceneDelegate.swift */; };
 		407FD9DD24E706A1004C53B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD9DC24E706A1004C53B4 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		407C3F9624FE75B000036815 /* Login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Login.json; sourceTree = "<group>"; };
+		407C3F9824FE989A00036815 /* Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
 		407FD9D524E706A1004C53B4 /* MapKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407FD9D824E706A1004C53B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407FD9DA24E706A1004C53B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +60,10 @@
 		4066A84624F5474A005A9277 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				407C3F9624FE75B000036815 /* Login.json */,
+				407C3F9824FE989A00036815 /* Locations.json */,
 				407FD9DC24E706A1004C53B4 /* ViewController.swift */,
+				40C1EE1424F0378800369940 /* PopupViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -93,7 +100,6 @@
 				40AF686624FD1D0C00FD1FA9 /* Supporting Files */,
 				407FD9D824E706A1004C53B4 /* AppDelegate.swift */,
 				407FD9DA24E706A1004C53B4 /* SceneDelegate.swift */,
-				40C1EE1424F0378800369940 /* PopupViewController.swift */,
 				40C1EE1024ED80B100369940 /* popup.swift */,
 				407FD9E324E706A4004C53B4 /* LaunchScreen.storyboard */,
 				40AF686324F6B1C000FD1FA9 /* Login.storyboard */,
@@ -182,8 +188,10 @@
 				407FD9E524E706A4004C53B4 /* LaunchScreen.storyboard in Resources */,
 				407FD9E224E706A4004C53B4 /* Assets.xcassets in Resources */,
 				407FD9E024E706A1004C53B4 /* Main.storyboard in Resources */,
+				407C3F9724FE75B000036815 /* Login.json in Resources */,
 				40AF686424F6B1C000FD1FA9 /* Login.storyboard in Resources */,
 				40C1EE1324EEC9C100369940 /* Popup.storyboard in Resources */,
+				407C3F9924FE989A00036815 /* Locations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

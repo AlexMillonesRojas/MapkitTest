@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIQ-Vc-dXb">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,22 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTv-bv-KuW">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FTv-bv-KuW">
+                                <rect key="frame" x="0.0" y="50" width="1024" height="718"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-Ym-280">
-                                <rect key="frame" x="414" y="717" width="197" height="32"/>
-                                <segments>
-                                    <segment title="Standard"/>
-                                    <segment title="Satellite"/>
-                                    <segment title="Hybrid"/>
-                                </segments>
-                                <connections>
-                                    <action selector="cambiarVistaMapa:" destination="BYZ-38-t0r" eventType="valueChanged" id="5B0-xZ-dOu"/>
-                                </connections>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" id="qBq-eJ-mIG" userLabel="ViewPopUp">
-                                <rect key="frame" x="-289" y="58" width="240" height="469"/>
+                                <rect key="frame" x="-289" y="84" width="240" height="469"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lasarte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIg-ni-mR0" userLabel="Nombre del lugar">
@@ -139,20 +129,29 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="MZz-Sl-J5R"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-Ym-280">
+                                <rect key="frame" x="403" y="717" width="218" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="cambiarVistaMapa:" destination="BYZ-38-t0r" eventType="valueChanged" id="5B0-xZ-dOu"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="FTv-bv-KuW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Me5-MF-RDa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jnO-Ym-280" secondAttribute="trailing" constant="413" id="P7X-Te-CpW"/>
-                            <constraint firstItem="FTv-bv-KuW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SCB-b2-ty8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jnO-Ym-280" secondAttribute="bottom" constant="20" id="V7w-mp-bhH"/>
-                            <constraint firstItem="FTv-bv-KuW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bf2-jX-mW9"/>
-                            <constraint firstItem="jnO-Ym-280" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="717" id="cXO-Un-07b"/>
-                            <constraint firstItem="jnO-Ym-280" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="414" id="j35-WY-Tp3"/>
-                            <constraint firstItem="FTv-bv-KuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yGo-E0-MH0"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fe5-m8-Uqu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="pvp-D4-3Lg">
+                            <connections>
+                                <action selector="searchButtom:" destination="BYZ-38-t0r" id="KHs-NX-J1t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
                         <outlet property="mapView" destination="FTv-bv-KuW" id="tpt-1H-KQA"/>
@@ -161,6 +160,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930.46874999999989" y="108.59375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xBZ-QQ-QEG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qIQ-Vc-dXb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="21H-Zz-wzs">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AiG-MR-qb2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmT-M5-icd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.28125" y="108.59375"/>
         </scene>
