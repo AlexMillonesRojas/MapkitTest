@@ -1,22 +1,39 @@
 {"locations":
  [
   {
-    "title": "Restaurante Lasarte",
-    "subtitle": "Restaurante 1"
-    "latitude": "41.393639",
-    "longitude": "2.162126"
+    "Nombre del restaurante": "Restaurante Lasarte",
+    "subtitulo": "",
+    "tipo": "Restaurante de alta cocina"
+    "latitud": "41.393639",
+    "longitud": "2.162126",
+    "imagen":"lasarte.jpg",
+    "horario": "13:30-15:30,20:30-23:00",
+    "calle":"Calle de Mallorca,259"
+    "codigo postal":"08008"
+    "pais":"Espana"
+    "telefono":"934453242"
+    "sitio web":"restaurantlasarte.com"
   },
   {
     "title": "La Tartareria Raw Food",
-    "subtitle": "Restaurante 2"
+    "subtitle": "",
+    "tipo":"Restaurante"
     "latitude": "41.384888",
-    "longitude": "2.162039"
+    "longitude": "2.162039",
+    "imagen":"lasarte.jpg",
+    "horario": "13:00–16:00,20:00–23:00",
+    "calle":"Carrer de Muntaner,26"
+    "codigo postal":"08011"
+    "ciudad":"Barcelona"
+    "pais":"Espana"
+    "telefono":"934453242"
+    "sitio web":"latartareria.com"
   },
   {
     "title": "Jobs Restaurant BCN",
-    "subtitle": "Restaurante 3"
+    "subtitle": "Restaurante 3",
     "latitude": "41.388524",
-    "longitude": "2.155976"
+    "longitude": "2.155976",
   }
  ]
 }

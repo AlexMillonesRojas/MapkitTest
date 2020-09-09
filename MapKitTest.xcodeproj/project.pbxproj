@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		407C3F9724FE75B000036815 /* Login.json in Resources */ = {isa = PBXBuildFile; fileRef = 407C3F9624FE75B000036815 /* Login.json */; };
 		407C3F9924FE989A00036815 /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 407C3F9824FE989A00036815 /* Locations.json */; };
+		407C3F9B24FFF76000036815 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C3F9A24FFF76000036815 /* LocationSearchTable.swift */; };
+		407C3F9D2501994F00036815 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C3F9C2501994F00036815 /* MyAnnotation.swift */; };
+		407C3FA025029ACF00036815 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407C3F9F25029ACF00036815 /* MapKit.framework */; };
+		407C3FA22502AE9400036815 /* PopUpInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C3FA12502AE9400036815 /* PopUpInformationViewController.swift */; };
 		407FD9D924E706A1004C53B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD9D824E706A1004C53B4 /* AppDelegate.swift */; };
 		407FD9DB24E706A1004C53B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD9DA24E706A1004C53B4 /* SceneDelegate.swift */; };
 		407FD9DD24E706A1004C53B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FD9DC24E706A1004C53B4 /* ViewController.swift */; };
@@ -24,6 +28,10 @@
 /* Begin PBXFileReference section */
 		407C3F9624FE75B000036815 /* Login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Login.json; sourceTree = "<group>"; };
 		407C3F9824FE989A00036815 /* Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
+		407C3F9A24FFF76000036815 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		407C3F9C2501994F00036815 /* MyAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
+		407C3F9F25029ACF00036815 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		407C3FA12502AE9400036815 /* PopUpInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpInformationViewController.swift; sourceTree = "<group>"; };
 		407FD9D524E706A1004C53B4 /* MapKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407FD9D824E706A1004C53B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407FD9DA24E706A1004C53B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407C3FA025029ACF00036815 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,9 @@
 				407C3F9624FE75B000036815 /* Login.json */,
 				407C3F9824FE989A00036815 /* Locations.json */,
 				407FD9DC24E706A1004C53B4 /* ViewController.swift */,
+				407C3F9C2501994F00036815 /* MyAnnotation.swift */,
+				407C3FA12502AE9400036815 /* PopUpInformationViewController.swift */,
+				407C3F9A24FFF76000036815 /* LocationSearchTable.swift */,
 				40C1EE1424F0378800369940 /* PopupViewController.swift */,
 			);
 			name = View;
@@ -75,11 +87,20 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		407C3F9E25029ACE00036815 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				407C3F9F25029ACF00036815 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		407FD9CC24E706A1004C53B4 = {
 			isa = PBXGroup;
 			children = (
 				407FD9D724E706A1004C53B4 /* MapKitTest */,
 				407FD9D624E706A1004C53B4 /* Products */,
+				407C3F9E25029ACE00036815 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,9 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407C3FA22502AE9400036815 /* PopUpInformationViewController.swift in Sources */,
+				407C3F9D2501994F00036815 /* MyAnnotation.swift in Sources */,
 				40C1EE1524F0378800369940 /* PopupViewController.swift in Sources */,
 				407FD9DD24E706A1004C53B4 /* ViewController.swift in Sources */,
 				407FD9D924E706A1004C53B4 /* AppDelegate.swift in Sources */,
+				407C3F9B24FFF76000036815 /* LocationSearchTable.swift in Sources */,
 				40C1EE1124ED80B100369940 /* popup.swift in Sources */,
 				407FD9DB24E706A1004C53B4 /* SceneDelegate.swift in Sources */,
 			);

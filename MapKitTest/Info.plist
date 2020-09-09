@@ -4,6 +4,10 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Esta aplicacion requiere saber su localizacion para un mejor funcionamiento.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Esta aplicacion requiere saber su localizacion para un mejor funcionamiento.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Esta aplicacion requiere saber su localizacion para un mejor funcionamiento.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
